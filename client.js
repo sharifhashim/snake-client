@@ -17,7 +17,17 @@ const connect = function () {
   conn.on("connect", () => {
     conn.write("Name: HAS")
   })
+  // conn.on("connect", () => {
+  //   conn.write("Move: up"), setTimeout(() => {
+  //     conn.write("Move: left"), 50}), setTimeout(() => {
+  //       conn.write("Move: up"), 100
+  //     }), setTimeout(() => {
+  //       conn.write("Move: left"), 150
+  //     })
+  //   setInterval(() => {
+  //     conn.write("Move: up")
+  //   }, 100)
+  // });
   return conn;
-};
-
-module.exports = { connect }
+}
+module.exports = { connect };
