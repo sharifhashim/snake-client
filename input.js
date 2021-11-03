@@ -14,6 +14,8 @@ const setupInput = function (conn) {
   stdin.on("data", moveLeft);
   stdin.on("data", moveDown);
   stdin.on("data", moveRight);
+  stdin.on("data", sayHello);
+  stdin.on("data", lightHouse);
   return stdin;
 };
 
@@ -42,5 +44,14 @@ const moveRight = (data) => {
     connection.write("Move: right")
   }
 };
-
+const sayHello = (data) => {
+  if (data === "h") {
+    connection.write("Say: Hello")
+  }
+}
+const lightHouse = (data) => {
+  if (data === "l") {
+    connection.write("Say: Lighthouse Labs")
+  }
+}
 module.exports = {setupInput}
